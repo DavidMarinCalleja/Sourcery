@@ -285,6 +285,7 @@ extension Variable {
         string += "attributes = \(String(describing: self.attributes)), "
         string += "isFinal = \(String(describing: self.isFinal)), "
         string += "isLazy = \(String(describing: self.isLazy)), "
+        string += "isDynamic = \(String(describing: self.isDynamic)), "
         string += "definedInTypeName = \(String(describing: self.definedInTypeName)), "
         string += "actualDefinedInTypeName = \(String(describing: self.actualDefinedInTypeName))"
         return string

@@ -58,6 +58,11 @@ public typealias SourceryVariable = Variable
         return attributes[Attribute.Identifier.lazy.name] != nil
     }
 
+    /// Whether variable is dynamic or not
+    public var isDynamic: Bool {
+        return attributes[Attribute.Identifier.dynamic.name] != nil
+    }
+
     /// Reference to type name where the variable is defined,
     /// nil if defined outside of any `enum`, `struct`, `class` etc
     public let definedInTypeName: TypeName?

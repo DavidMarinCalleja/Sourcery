@@ -61,6 +61,7 @@ import Foundation
         case privateSetter = "setter_access.private"
         case fileprivateSetter = "setter_access.fileprivate"
         case optional
+        case dynamic
 
         public init?(identifier: String) {
             let identifier = identifier.trimmingPrefix("source.decl.attribute.")

@@ -112,6 +112,7 @@ import Foundation
         case privateSetter = "setter_access.private"
         case fileprivateSetter = "setter_access.fileprivate"
         case optional
+        case dynamic
 
         public init?(identifier: String) {
             let identifier = identifier.trimmingPrefix("source.decl.attribute.")
@@ -714,6 +715,7 @@ extension Variable {
         string += "attributes = \\(String(describing: self.attributes)), "
         string += "isFinal = \\(String(describing: self.isFinal)), "
         string += "isLazy = \\(String(describing: self.isLazy)), "
+        string += "isDynamic = \\(String(describing: self.isDynamic)), "
         string += "definedInTypeName = \\(String(describing: self.definedInTypeName)), "
         string += "actualDefinedInTypeName = \\(String(describing: self.actualDefinedInTypeName))"
         return string
@@ -4503,6 +4505,11 @@ public typealias SourceryVariable = Variable
     /// Whether variable is lazy or not
     public var isLazy: Bool {
         return attributes[Attribute.Identifier.lazy.name] != nil
+    }
+
+    /// Whether variable is dynamic or not
+    public var isDynamic: Bool {
+        return attributes[Attribute.Identifier.dynamic.name] != nil
     }
 
     /// Reference to type name where the variable is defined,
