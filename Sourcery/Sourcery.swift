@@ -11,7 +11,7 @@ import SourceryRuntime
 import SourceryJS
 import SourcerySwift
 import TryCatch
-import xcproj
+import XcodeProj
 
 class Sourcery {
     public static let version: String = Version.current.value
@@ -386,7 +386,7 @@ extension Sourcery {
         }
 
         if let linkTo = output.linkTo {
-            try linkTo.project.writePBXProj(path: linkTo.projectPath)
+//            try linkTo.project.writePBXProj(path: linkTo.projectPath)
         }
 
         try fileAnnotatedContent.forEach { (path, contents) in
@@ -404,21 +404,21 @@ extension Sourcery {
         if let group = linkTo.group {
             do {
                 let addedGroup = linkTo.project.addGroup(named: group, to: linkTo.project.rootGroup, options: [])
-                fileGroup = addedGroup.object
-                if let groupPath = linkTo.project.fullPath(fileElement: addedGroup, sourceRoot: sourceRoot) {
-                    try groupPath.mkpath()
-                }
+//                fileGroup = addedGroup.object
+//                if let groupPath = linkTo.project.fullPath(fileElement: addedGroup, sourceRoot: sourceRoot) {
+//                    try groupPath.mkpath()
+//                }
             } catch {
                 Log.warning("Failed to create a folder for group '\(fileGroup.name ?? "")'. \(error)")
             }
         } else {
-            fileGroup = linkTo.project.rootGroup
+//            fileGroup = linkTo.project.rootGroup
         }
-        do {
-            try linkTo.project.addSourceFile(at: output, toGroup: fileGroup, target: target, sourceRoot: sourceRoot)
-        } catch {
-            Log.warning("Failed to link file at \(output) to \(linkTo.projectPath). \(error)")
-        }
+//        do {
+//            try linkTo.project.addSourceFile(at: output, toGroup: fileGroup, target: target, sourceRoot: sourceRoot)
+//        } catch {
+//            Log.warning("Failed to link file at \(output) to \(linkTo.projectPath). \(error)")
+//        }
     }
 
     private func output(result: String, to outputPath: Path) throws {

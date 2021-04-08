@@ -14,12 +14,12 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/kylef/Commander.git", .exact("0.7.1")),
         // PathKit needs to be exact to avoid a SwiftPM bug where dependency resolution takes a very long time.
-        .package(url: "https://github.com/kylef/PathKit.git", .exact("0.9.2")),
+        .package(url: "https://github.com/kylef/PathKit.git", .exact("1.0.0")),
         .package(url: "https://github.com/jpsim/SourceKitten.git", .exact("0.21.2")),
-        .package(url: "https://github.com/kylef/Stencil.git", .exact("0.13.1")),
-        .package(url: "https://github.com/SwiftGen/StencilSwiftKit.git", .exact("2.7.0")),
-        .package(url: "https://github.com/tuist/xcodeproj", .exact("4.3.1")),
-        .package(url: "https://github.com/tadija/AEXML.git", .exact("4.3.3")),
+        .package(url: "https://github.com/kylef/Stencil.git", .exact("0.14.0")),
+        .package(url: "https://github.com/SwiftGen/StencilSwiftKit.git", .exact("2.8.0")),
+        .package(url: "https://github.com/tuist/xcodeproj", .exact("7.20.0")),
+        .package(url: "https://github.com/tadija/AEXML.git", .exact("4.5.0")),
     ],
     targets: [
         .target(name: "Sourcery", dependencies: [
@@ -31,7 +31,7 @@ let package = Package(
             "PathKit",
             "SourceKittenFramework",
             "StencilSwiftKit",
-            "xcproj",
+            "XcodeProj",
             "TryCatch",
         ]),
         .target(name: "SourceryRuntime"),
